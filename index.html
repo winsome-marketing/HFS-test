@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HFS - شريككم الاستراتيجي لتوريد الأغذية لقطاع الضيافة</title>
+    <title>HFS - حلول سلاسل إمداد الأغذية المستدامة لقطاع الضيافة والإعاشة</title>
     <!-- خط Cairo لتناسق بصري حديث -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,25 +12,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* 1. نظام الألوان والمتغيرات الأساسية */
+        /* 1. نظام ألوان البراند المعتمد (Brand Identity Colors) */
         :root {
-            --primary-color: #D31F26;        /* الأحمر الحيوي للجذب والـ CTA */
-            --secondary-color: #2E3133;      /* الرمادي الفحمي للثقة والمؤسساتية */
+            --primary-color: #D31F26;        /* الأحمر الحيوي للـ CTA وجذب الانتباه */
+            --secondary-color: #2E3133;      /* الرمادي الفحمي للثقة والاستقرار */
             --accent-color: #3E4C5E;         /* الرمادي الأزرق اللوجستي */
             --bg-light: #FFFFFF;             /* الأبيض النقي */
             --bg-offwhite: #F8F9FA;          /* الرمادي الفاتح جداً */
-            --text-dark: #2E3133;            /* نصوص العناوين */
-            --text-muted: #6C757D;           /* النصوص الوصفية */
+            --text-dark: #2E3133;            /* نصوص العناوين الرئيسية */
+            --text-muted: #6C757D;           /* النصوص الوصفية والفقرات */
             --text-light: #FFFFFF;           /* النصوص على خلفيات داكنة */
             --font-family: 'Cairo', sans-serif;
-            --transition-speed: 0.3s;
-            --border-radius: 8px;
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-            --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+            --transition-speed: 0.4s;
+            --border-radius: 12px;           /* حواف ناعمة حديثة */
+            --shadow-sm: 0 4px 10px rgba(0,0,0,0.03);
+            --shadow-md: 0 10px 30px rgba(0,0,0,0.06);
+            --shadow-lg: 0 20px 50px rgba(0,0,0,0.1);
         }
 
-        /* 2. التنسيق العام وإعادة التعيين */
+        /* 2. إعادة التعيين والتنسيق الأساسي */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -48,7 +48,7 @@
         a {
             text-decoration: none;
             color: inherit;
-            transition: color var(--transition-speed);
+            transition: all var(--transition-speed);
         }
 
         ul {
@@ -68,17 +68,18 @@
             padding: 0 20px;
         }
 
-        /* مكونات الأزرار المشتركة (CRO Optimized Buttons) */
+        /* مكونات الأزرار المشتركة */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 12px 28px;
-            font-size: 1rem;
-            font-weight: 600;
+            height: 52px;
+            padding: 0 28px;
+            font-size: 0.95rem;
+            font-weight: 700;
             border-radius: var(--border-radius);
             cursor: pointer;
-            transition: all var(--transition-speed) ease;
+            transition: all var(--transition-speed) cubic-bezier(0.165, 0.84, 0.44, 1);
             border: 2px solid transparent;
             gap: 8px;
         }
@@ -90,8 +91,8 @@
 
         .btn-primary:hover {
             background-color: #b5171d;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(211, 31, 38, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(211, 31, 38, 0.25);
         }
 
         .btn-secondary {
@@ -101,8 +102,9 @@
         }
 
         .btn-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
+            background-color: var(--text-light);
+            color: var(--text-dark);
+            transform: translateY(-3px);
         }
 
         .btn-outline {
@@ -114,29 +116,31 @@
         .btn-outline:hover {
             background-color: var(--primary-color);
             color: var(--text-light);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(211, 31, 38, 0.15);
         }
 
         /* الهيدر وشريط الملاحة */
         header {
-            background-color: var(--bg-light);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             box-shadow: var(--shadow-sm);
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.03);
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 80px;
+            height: 85px;
         }
 
-        .logo h2 {
-            color: var(--primary-color);
-            font-weight: 800;
-            font-size: 1.8rem;
+        .logo img {
+            max-height: 55px;
+            object-fit: contain;
         }
 
         .nav-links {
@@ -145,18 +149,24 @@
         }
 
         .nav-links a {
-            font-weight: 600;
+            font-weight: 700;
             color: var(--text-dark);
+            font-size: 0.95rem;
         }
 
         .nav-links a:hover {
             color: var(--primary-color);
         }
 
+        @media (max-width: 991px) {
+            .nav-links, header .btn {
+                display: none;
+            }
+        }
+
         /* 1. قسم البداية (Hero Section) */
         .hero {
             position: relative;
-            /* استبدال رابط الصورة بصورة تعبيرية لقطاع الأغذية والخدمات اللوجستية */
             background: linear-gradient(rgba(46, 49, 51, 0.75), rgba(46, 49, 51, 0.75)), 
                         url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1600') no-repeat center center/cover;
             padding: 120px 0;
@@ -164,13 +174,8 @@
             text-align: center;
         }
 
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 800;
             margin-bottom: 20px;
             line-height: 1.3;
@@ -180,77 +185,67 @@
             font-size: 1.25rem;
             margin-bottom: 40px;
             opacity: 0.95;
-            font-weight: 300;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-ctas {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
         }
 
-        /* 2. قسم شركاء الثقة (Social Proof - Logo Bar) */
+        @media (max-width: 768px) {
+            .hero { padding: 80px 0; }
+            .hero h1 { font-size: 1.9rem; }
+            .hero p { font-size: 1.05rem; }
+            .hero-ctas .btn { width: 100%; }
+        }
+
+        /* 2. شريط الاعتمادات وجودة التوريد الموجه لقطاع الأعمال (B2B Trust Accreditations Bar) */
         .social-proof {
             background-color: var(--bg-light);
-            padding: 40px 0;
-            border-bottom: 1px solid #eaeaea;
+            padding: 25px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
-        .social-proof-title {
-            text-align: center;
-            font-size: 1rem;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .logo-track-container {
-            overflow: hidden;
-            position: relative;
-            width: 100%;
-        }
-
-        /* شريط شعارات انسيابي تلقائي الحركة */
-        .logo-track {
+        .accreditations-container {
             display: flex;
-            width: max-content;
-            animation: scroll 30s linear infinite;
-            gap: 60px;
+            justify-content: space-around;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
-        .logo-item {
-            width: 120px;
-            height: 50px;
+        .accreditation-item {
             display: flex;
             align-items: center;
-            justify-content: center;
-            filter: grayscale(100%);
-            opacity: 0.6;
-            transition: all var(--transition-speed);
-        }
-
-        .logo-item:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-        }
-
-        .logo-item i {
-            font-size: 2.5rem;
+            gap: 10px;
+            font-size: 0.9rem;
+            font-weight: 700;
             color: var(--accent-color);
         }
 
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(50%); }
+        .accreditation-item i {
+            font-size: 1.25rem;
+            color: var(--primary-color);
         }
 
-        /* 3. تصنيفات المنتجات (Product Categories) */
+        @media (max-width: 768px) {
+            .accreditations-container {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-left: 20px;
+            }
+        }
+
+        /* 3. تصنيفات المنتجات (Product Carousel Section - Editorial Style) */
         .products-section {
             background-color: var(--bg-offwhite);
             padding: 80px 0;
+            position: relative;
         }
 
         .section-header {
@@ -260,76 +255,201 @@
 
         .section-header h2 {
             font-size: 2.2rem;
-            font-weight: 700;
+            font-weight: 800;
             color: var(--text-dark);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .section-header p {
             color: var(--text-muted);
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
+            font-size: 1rem;
         }
 
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
+        @media (max-width: 768px) {
+            .section-header h2 { font-size: 1.7rem; }
+            .section-header p { font-size: 0.95rem; }
         }
 
-        .category-card {
-            background-color: var(--bg-light);
-            border-radius: var(--border-radius);
-            padding: 24px;
-            text-align: center;
-            box-shadow: var(--shadow-sm);
-            transition: all var(--transition-speed) ease;
-            border: 1px solid #eee;
+        /* هيكل الكاروسيل المشترك والتفاعلي */
+        .carousel-outer-wrapper {
+            position: relative;
+            margin-bottom: 30px;
+            padding: 0 10px;
         }
 
-        .category-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary-color);
-        }
-
-        .category-image-wrapper {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
+        .carousel-track-wrapper {
             overflow: hidden;
-            background-color: var(--bg-offwhite);
-            border: 3px solid #eee;
-            transition: border-color var(--transition-speed);
+            width: 100%;
+            border-radius: var(--border-radius);
         }
 
-        .category-card:hover .category-image-wrapper {
-            border-color: var(--primary-color);
+        .carousel-track {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            will-change: transform;
         }
 
-        .category-image-wrapper img {
+        /* كرت المنتج البصري الحديث ممتد الغلاف (Full-bleed Card) */
+        .category-card {
+            position: relative;
+            height: 380px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            flex: 0 0 calc(25% - 15px); /* 4 أعمدة بالديسك توب */
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-speed) cubic-bezier(0.165, 0.84, 0.44, 1);
+            cursor: pointer;
+        }
+
+        @media (max-width: 1024px) {
+            .category-card { flex: 0 0 calc(33.333% - 14px); }
+        }
+
+        @media (max-width: 768px) {
+            .category-card { flex: 0 0 calc(50% - 10px); }
+        }
+
+        @media (max-width: 480px) {
+            .category-card { 
+                flex: 0 0 100%; /* كرت واحد عريض على الجوال لتجنب الخلل البصري */
+            }
+        }
+
+        .category-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform var(--transition-speed) ease;
+        }
+
+        .category-card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            background: linear-gradient(to top, rgba(18, 20, 21, 0.95) 0%, rgba(18, 20, 21, 0.4) 50%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 24px;
+            color: var(--text-light);
+            z-index: 2;
         }
 
         .category-card h3 {
-            font-size: 1.15rem;
-            margin-bottom: 15px;
-            color: var(--text-dark);
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            line-height: 1.3;
         }
 
-        /* مغناطيس جذب العملاء المحتملين (Lead Magnet Box) */
+        .category-card .card-link {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* تأثيرات تحويم */
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .category-card:hover img {
+            transform: scale(1.06);
+        }
+
+        /* أزرار التنقل الزجاجية البلورية المتداخلة */
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-speed);
+            z-index: 10;
+        }
+
+        .carousel-arrow:hover {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            border-color: var(--primary-color);
+        }
+
+        .carousel-arrow.prev { right: -15px; }
+        .carousel-arrow.next { left: -15px; }
+
+        @media (max-width: 768px) {
+            .carousel-arrow { display: none; } /* إخفاء الأسهم بالجوال والاعتماد على السحب باللمس */
+        }
+
+        /* نقاط التصفح الدقيقة */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 25px;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: all var(--transition-speed);
+        }
+
+        .carousel-dot.active {
+            background-color: var(--primary-color);
+            width: 24px;
+            border-radius: 6px;
+        }
+
+        /* حاوية الأزرار التفاعلية المزدوجة (CRO CTAs Container) */
+        .section-cta-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 576px) {
+            .section-cta-container .btn {
+                width: 100%; /* جعل الأزرار تأخذ العرض الكامل بالجوال لسهولة النقر */
+            }
+        }
+
+        /* مغناطيس جذب العملاء وضبط الارتفاعات الفنية */
         .lead-magnet-box {
             background-color: var(--bg-light);
             border-radius: var(--border-radius);
-            padding: 40px;
+            padding: 40px 30px;
             box-shadow: var(--shadow-md);
             max-width: 850px;
-            margin: 40px auto 0;
-            border-right: 5px solid var(--primary-color);
+            margin: 50px auto 0;
+            border-right: 6px solid var(--primary-color);
         }
 
         .lead-magnet-content {
@@ -349,6 +469,7 @@
             font-size: 1.3rem;
             margin-bottom: 8px;
             color: var(--text-dark);
+            font-weight: 800;
         }
 
         .lead-magnet-form {
@@ -357,22 +478,33 @@
             flex: 1;
             min-width: 300px;
             width: 100%;
+            align-items: center;
+        }
+
+        @media (max-width: 576px) {
+            .lead-magnet-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
         }
 
         .lead-magnet-form input[type="email"] {
             flex: 1;
-            padding: 12px 16px;
+            height: 52px;
+            padding: 0 16px;
             border: 1px solid #ddd;
             border-radius: var(--border-radius);
             font-family: var(--font-family);
             outline: none;
+            font-size: 0.95rem;
+            transition: border-color var(--transition-speed);
         }
 
         .lead-magnet-form input[type="email"]:focus {
             border-color: var(--primary-color);
         }
 
-        /* 4. قسم التميز والقيمة المضافة (Value Pillars) */
+        /* 4. قسم التميز والقيمة المضافة (Value Pillars Redesigned) */
         .pillars-section {
             background-color: var(--bg-light);
             padding: 80px 0;
@@ -381,24 +513,24 @@
         .pillars-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            gap: 25px;
         }
 
         .pillar-card {
-            text-align: center;
-            padding: 30px 20px;
+            background-color: var(--bg-light);
             border-radius: var(--border-radius);
-            transition: all var(--transition-speed);
-        }
-
-        .pillar-card:hover {
-            background-color: var(--bg-offwhite);
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            transition: all var(--transition-speed) cubic-bezier(0.165, 0.84, 0.44, 1);
+            border-bottom: 4px solid transparent;
         }
 
         .pillar-icon {
             width: 70px;
             height: 70px;
-            background-color: rgba(211, 31, 38, 0.08);
+            background-color: rgba(211, 31, 38, 0.05);
             color: var(--primary-color);
             border-radius: 50%;
             display: flex;
@@ -406,37 +538,32 @@
             justify-content: center;
             margin: 0 auto 20px;
             font-size: 1.8rem;
+            transition: all var(--transition-speed);
         }
 
         .pillar-card h3 {
             font-size: 1.25rem;
+            font-weight: 800;
             margin-bottom: 12px;
             color: var(--text-dark);
         }
 
         .pillar-card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.92rem;
+            line-height: 1.6;
         }
 
-        /* 5. قسم العلامات التجارية (Our Brands) */
+        .pillar-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-bottom-color: var(--primary-color);
+        }
+
+        /* 5. قسم العلامات التجارية المحدث (Brands Carousel Section) */
         .brands-section {
             background-color: var(--bg-offwhite);
             padding: 80px 0;
-        }
-
-        .brands-slider-container {
-            position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-
-        .brands-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            transition: transform var(--transition-speed) ease;
         }
 
         .brand-card {
@@ -444,127 +571,168 @@
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow-sm);
-            border: 1px solid #eee;
+            border: 1px solid #f0f0f0;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
+            justify-content: space-between;
             padding: 30px 20px;
+            transition: all var(--transition-speed) ease;
+            flex: 0 0 calc(25% - 15px);
+        }
+
+        @media (max-width: 1024px) {
+            .brand-card { flex: 0 0 calc(33.333% - 14px); }
+        }
+
+        @media (max-width: 768px) {
+            .brand-card { flex: 0 0 calc(50% - 10px); }
+        }
+
+        @media (max-width: 480px) {
+            .brand-card { flex: 0 0 100%; }
+        }
+
+        .brand-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
         }
 
         .brand-logo-wrapper {
-            height: 80px;
+            height: 95px;
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            padding: 10px;
+            border: 1px solid #f5f5f5;
         }
 
         .brand-logo-wrapper img {
             max-height: 100%;
-            max-width: 150px;
+            max-width: 100%;
             object-fit: contain;
+        }
+
+        .brand-logo-placeholder {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            font-weight: 800;
         }
 
         .brand-card h4 {
             font-size: 1.2rem;
+            font-weight: 800;
             margin-bottom: 10px;
             color: var(--text-dark);
+            text-align: center;
         }
 
         .brand-card p {
             color: var(--text-muted);
             font-size: 0.9rem;
             margin-bottom: 20px;
-            min-height: 54px;
-        }
-
-        .brands-controls {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 40px;
-        }
-
-        .control-btn {
-            background-color: var(--bg-light);
-            border: 1px solid #ddd;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            transition: all var(--transition-speed);
-        }
-
-        .control-btn:hover {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            color: var(--text-light);
-        }
-
-        /* 6. قسم الأرقام والإنجازات (Trust Numbers) */
-        .stats-section {
-            position: relative;
-            background: linear-gradient(rgba(62, 76, 94, 0.9), rgba(62, 76, 94, 0.9)), 
-                        url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
-            padding: 80px 0;
-            color: var(--text-light);
             text-align: center;
+            min-height: 50px;
+            line-height: 1.5;
         }
 
-        .stats-grid {
+        /* 6. قسم التبويب المنقسم الفاخر (Split-Screen Stats + Form Section) */
+        .split-lead-section {
+            background-color: var(--bg-offwhite);
+            padding: 80px 0;
+        }
+
+        .split-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
+            grid-template-columns: 40% 60%;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
         }
 
-        .stat-item h3 {
-            font-size: 3.5rem;
+        @media (max-width: 991px) {
+            .split-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .split-left-info {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #1a1c1d 100%);
+            color: var(--text-light);
+            padding: 50px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .split-left-info::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=600') no-repeat center center/cover;
+            opacity: 0.08;
+            z-index: 1;
+        }
+
+        .split-left-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .split-left-content h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .split-left-content p {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .stats-vertical-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .stat-card-item h4 {
+            font-size: 2.5rem;
             font-weight: 800;
             color: var(--primary-color);
             margin-bottom: 5px;
         }
 
-        .stat-item p {
-            font-size: 1.1rem;
-            font-weight: 600;
+        .stat-card-item p {
+            font-size: 0.9rem;
+            font-weight: 700;
             opacity: 0.9;
         }
 
-        /* 7. نموذج طلب السعر المباشر (Lead Capture Form) */
-        .quote-section {
+        .split-right-form {
             background-color: var(--bg-light);
-            padding: 80px 0;
+            padding: 50px;
         }
 
-        .quote-container {
-            max-width: 900px;
-            margin: 0 auto;
-            background-color: var(--bg-offwhite);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-md);
-            overflow: hidden;
-            display: grid;
-            grid-template-columns: 1fr;
-        }
-
-        .quote-form-wrapper {
-            padding: 50px 40px;
-        }
-
-        .quote-form-header {
-            text-align: center;
-            margin-bottom: 35px;
-        }
-
-        .quote-form-header h3 {
-            font-size: 1.8rem;
-            color: var(--text-dark);
-            margin-bottom: 10px;
+        @media (max-width: 576px) {
+            .split-right-form {
+                padding: 35px 20px;
+            }
         }
 
         .quote-form-grid {
@@ -573,7 +741,7 @@
             gap: 20px;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 576px) {
             .quote-form-grid {
                 grid-template-columns: 1fr;
             }
@@ -589,42 +757,110 @@
             grid-column: span 2;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 576px) {
             .form-group.full-width {
                 grid-column: span 1;
             }
         }
 
         .form-group label {
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.9rem;
             color: var(--text-dark);
         }
 
         .form-group input, .form-group select, .form-group textarea {
-            padding: 12px 16px;
+            padding: 12px 14px;
             border: 1px solid #ddd;
             border-radius: var(--border-radius);
             font-family: var(--font-family);
             font-size: 0.95rem;
             outline: none;
             transition: border-color var(--transition-speed);
+            background-color: var(--bg-offwhite);
         }
 
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
             border-color: var(--primary-color);
+            background-color: var(--bg-light);
         }
 
-        .quote-form-wrapper button {
+        /* 7. قسم عملائنا الفاخر الموضع فوق المبيعات مباشرة (Premium Enterprise Showcase) */
+        .clients-section {
+            background-color: var(--secondary-color); /* خلفية فحمي عميقة */
+            padding: 80px 0;
+        }
+
+        .clients-section .section-header h2 {
+            color: var(--text-light);
+        }
+
+        .clients-section .section-header p {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 16px;
+            align-items: center;
+            justify-items: center;
+        }
+
+        @media (max-width: 1200px) {
+            .clients-grid { grid-template-columns: repeat(6, 1fr); }
+        }
+
+        @media (max-width: 991px) {
+            .clients-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        @media (max-width: 480px) {
+            .clients-grid { 
+                grid-template-columns: repeat(3, 1fr); /* 3 أعمدة بالجوال لتباين وحجم ممتاز */
+                gap: 10px;
+            }
+        }
+
+        /* كرت عميل بريميوم متناسق وبدون حدود داكنة باهتة */
+        .client-logo-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
             width: 100%;
-            margin-top: 25px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px;
+            transition: all var(--transition-speed) ease;
         }
 
-        /* 8. التذييل (Footer) */
+        .client-logo-card img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            filter: brightness(0) invert(1); /* جعل كافة الشعارات بيضاء للتناسق البصري الفخم */
+            opacity: 0.5;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .client-logo-card:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .client-logo-card:hover img {
+            opacity: 1;
+        }
+
+        /* 9. التذييل (Footer) */
         footer {
-            background-color: var(--secondary-color);
+            background-color: #1a1c1d;
             color: var(--text-light);
             padding: 80px 0 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .footer-grid {
@@ -639,6 +875,7 @@
             margin-bottom: 25px;
             position: relative;
             padding-bottom: 10px;
+            font-weight: 800;
         }
 
         .footer-col h4::after {
@@ -651,9 +888,19 @@
             background-color: var(--primary-color);
         }
 
+        .footer-about img {
+            max-height: 55px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 5px;
+            border-radius: var(--border-radius);
+        }
+
         .footer-about p {
             opacity: 0.8;
             margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
 
         .footer-links li {
@@ -662,12 +909,13 @@
 
         .footer-links a {
             opacity: 0.8;
+            font-size: 0.95rem;
         }
 
         .footer-links a:hover {
             opacity: 1;
             color: var(--primary-color);
-            padding-right: 5px;
+            padding-right: 6px;
         }
 
         .footer-contact li {
@@ -676,6 +924,7 @@
             gap: 15px;
             margin-bottom: 15px;
             opacity: 0.8;
+            font-size: 0.95rem;
         }
 
         .footer-contact i {
@@ -703,18 +952,18 @@
         .social-btn:hover {
             background-color: var(--primary-color);
             color: var(--text-light);
-            transform: translateY(-3px);
+            transform: translateY(-4px);
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             padding-top: 20px;
             text-align: center;
-            font-size: 0.9rem;
-            opacity: 0.6;
+            font-size: 0.85rem;
+            opacity: 0.5;
         }
 
-        /* نافذة النجاح المنبثقة للتفاعل الراجع */
+        /* نافذة الإشعارات التفاعلية */
         .toast {
             position: fixed;
             bottom: 30px;
@@ -745,285 +994,621 @@
     <header>
         <div class="container nav-container">
             <div class="logo">
-                <h2>HFS</h2>
+                <a href="#"><img src="https://hfs.sa/wp-content/uploads/2025/10/hfs-logo-main.png" alt="HFS Logo"></a>
             </div>
             <nav class="nav-links">
                 <a href="#hero">الرئيسية</a>
                 <a href="#products">المنتجات</a>
                 <a href="#why-us">لماذا نحن</a>
                 <a href="#brands">العلامات التجارية</a>
+                <a href="#clients">عملائنا</a>
                 <a href="#quote-form">طلب عرض سعر</a>
             </nav>
             <div>
-                <a href="#quote-form" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">طلب عرض سعر مخصص</a>
+                <a href="#quote-form" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem; height: auto;">طلب عرض سعر مخصص</a>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- 1. قسم البداية (Hero Section) -->
+        <!-- 1. قسم البداية المطور لعام 2026 (Hero Section) -->
         <section class="hero" id="hero">
             <div class="container hero-content">
-                <h1>شريككم الاستراتيجي لتوريد الأغذية لقطاع الفنادق والمطاعم والإعاشة</h1>
-                <p>نوفر أجود المنتجات الغذائية المحلية والعالمية بأسعار تنافسية وسلاسل إمداد موثوقة في جميع أنحاء المملكة.</p>
+                <h1>تأمين سلاسل إمداد الغذاء المستدامة والذكية لقطاع الضيافة والخدمات الغذائية بالمملكة</h1>
+                <p>منذ عام 1957، نؤمّن لشركائنا أرقى المكونات الغذائية العالمية والمحلية عبر سلاسل توريد مبردة متكاملة وفائقة الدقة لضمان استمرارية أعمالكم بكفاءة تامة.</p>
                 <div class="hero-ctas">
-                    <a href="#quote-form" class="btn btn-primary">اطلب عرض سعر مخصص</a>
-                    <a href="#products" class="btn btn-secondary">تصفح كتالوج المنتجات</a>
+                    <a href="#quote-form" class="btn btn-primary">اطلب تسعير لوجستي مخصص</a>
+                    <a href="#products" class="btn btn-secondary">استكشاف كتالوج المنتجات 2026</a>
                 </div>
             </div>
         </section>
 
-        <!-- 2. قسم شركاء الثقة (Social Proof) -->
+        <!-- 2. شريط اعتمادات الجودة المعتمد لقطاع الأعمال (B2B Trust Accreditations Bar) -->
         <section class="social-proof">
-            <div class="container">
-                <div class="social-proof-title">شريك توريد معتمد وموثوق لدى كبرى الكيانات</div>
-                <div class="logo-track-container">
-                    <div class="logo-track">
-                        <!-- تكرار الشعارات لمحاكاة الدوران التلقائي اللانهائي -->
-                        <div class="logo-item"><i class="fa-solid fa-hotel"></i> <span style="font-size: 0.9rem; font-weight:700; margin-right: 5px;">Radisson</span></div>
-                        <div class="logo-item"><i class="fa-solid fa-bed"></i> <span style="font-size: 0.9rem; font-weight:700; margin-right: 5px;">Rotana</span></div>
-                        <div class="logo-item"><i class="fa-solid fa-building-columns"></i> <span style="font-size: 0.9rem; font-weight:700; margin-right: 5px;">Al Faisaliah</span></div>
-                        <div class="logo-item"><i class="fa-solid fa-tree"></i> <span style="font-size: 0.9rem; font-weight:700; margin-right: 5px;">Ramada</span></div>
-                        <div class="logo-item"><i class="fa-solid fa-hotel"></i> <span style="font-size: 0.9rem; font-weight:700; margin-right: 5px;">Centro</span></div>
-                        <!-- مكرر -->
-                        <div class="logo-item"><i class="fa-solid fa-hotel"></i> <span style="font-size: 0.9rem; font-weight:700; margin-right: 5px;">Radisson</span></div>
-                        <div class="logo-item"><i class="fa-solid fa-bed"></i> <span style="font-size: 0.9rem; font-weight:700; margin-right: 5px;">Rotana</span></div>
-                        <div class="logo-item"><i class="fa-solid fa-building-columns"></i> <span style="font-size: 0.9rem; font-weight:700; margin-right: 5px;">Al Faisaliah</span></div>
-                        <div class="logo-item"><i class="fa-solid fa-tree"></i> <span style="font-size: 0.9rem; font-weight:700; margin-right: 5px;">Ramada</span></div>
-                        <div class="logo-item"><i class="fa-solid fa-hotel"></i> <span style="font-size: 0.9rem; font-weight:700; margin-right: 5px;">Centro</span></div>
-                    </div>
+            <div class="container accreditations-container">
+                <div class="accreditation-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>تخزين وتوزيع مرخص من هيئة الغذاء والدواء (SFDA)</span>
+                </div>
+                <div class="accreditation-item">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>امتثال كلي للأنظمة البلدية ومنصة (بلدي) المعتمدة</span>
+                </div>
+                <div class="accreditation-item">
+                    <i class="fa-solid fa-award"></i>
+                    <span>سلسلة تبريد مبردة ذكية ومطابقة للمواصفات القياسية</span>
+                </div>
+                <div class="accreditation-item">
+                    <i class="fa-solid fa-file-contract"></i>
+                    <span>اعتماد رسمي لوجستي وعقود توريد مؤسسية موثقة</span>
                 </div>
             </div>
         </section>
 
-        <!-- 3. تصنيفات المنتجات (Product Categories) -->
+        <!-- 3. تصنيفات المنتجات (Product Carousel Section - Rectangular Cover Style) -->
         <section class="products-section" id="products">
             <div class="container">
                 <div class="section-header">
-                    <h2>منتجاتنا المتنوعة</h2>
-                    <p>نقدم تشكيلة شاملة من السلع والمكونات الغذائية المنتقاة بعناية تامة لتلبي متطلبات الجودة بقطاع الأغذية والضيافة.</p>
+                    <h2>حلول غذائية متكاملة وحصرية لقطاع خدمات الأغذية</h2>
+                    <p>نعمل على تأمين وتوريد باقة منتقاة بعناية من السلع التموينية والمكونات الطازجة والمجمدة لتلبية الاحتياجات اليومية لمنشآتكم.</p>
                 </div>
                 
-                <div class="categories-grid">
-                    <!-- تصنيف 1 -->
-                    <div class="category-card">
-                        <div class="category-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&q=80&w=250" alt="الحليب ومشتقات الألبان">
+                <div class="carousel-outer-wrapper">
+                    <button class="carousel-arrow prev" id="productPrevBtn"><i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="carousel-track-wrapper">
+                        <div class="carousel-track" id="productTrack">
+                            <!-- تصنيف 1: الأرز والمعكرونة -->
+                            <div class="category-card" onclick="window.location.href='https://hfs.sa/ar/product-category/%d8%a7%d9%84%d8%a3%d8%b1%d8%b2-%d9%88%d8%a7%d9%84%d9%85%d8%b9%d9%83%d8%b1%d9%88%d9%86%d8%a9/'">
+                                <img src="https://hfs.sa/wp-content/uploads/2025/10/top-view-raw-pasta-with-rice-dark-surface-raw-dough-pasta-min-1024x683.jpg" alt="الأرز والمعكرونة">
+                                <div class="category-card-overlay">
+                                    <h3>الأرز والمعكرونة</h3>
+                                    <span class="card-link">عرض التفاصيل <i class="fa-solid fa-arrow-left"></i></span>
+                                </div>
+                            </div>
+
+                            <!-- تصنيف 2: اللحوم -->
+                            <div class="category-card" onclick="window.location.href='https://hfs.sa/ar/product-category/%d8%a7%d9%84%d9%84%d8%ad%d9%88%d9%85/'">
+                                <img src="https://hfs.sa/wp-content/uploads/2025/10/kyle-mackie-QH8SHBARVVk-unsplash-min-1024x683.jpg" alt="اللحوم">
+                                <div class="category-card-overlay">
+                                    <h3>اللحوم</h3>
+                                    <span class="card-link">عرض التفاصيل <i class="fa-solid fa-arrow-left"></i></span>
+                                </div>
+                            </div>
+
+                            <!-- تصنيف 3: الأطعمة المعلبة -->
+                            <div class="category-card" onclick="window.location.href='https://hfs.sa/ar/product-category/%d8%a7%d9%84%d9%8a%d8%a3%d8%b7%d8%b9%d9%85%d8%a9-%d8%a7%d9%84%d9%85%d8%b9%d9%84%d8%a8%d8%a9/'">
+                                <img src="https://hfs.sa/wp-content/uploads/2025/10/pexels-julia-m-cameron-6994944-min-1024x683.jpg" alt="الأطعمة المعلبة">
+                                <div class="category-card-overlay">
+                                    <h3>الأطعمة المعلبة</h3>
+                                    <span class="card-link">عرض التفاصيل <i class="fa-solid fa-arrow-left"></i></span>
+                                </div>
+                            </div>
+
+                            <!-- تصنيف 4: الحليب ومشتقات الألبان -->
+                            <div class="category-card" onclick="window.location.href='https://hfs.sa/ar/product-category/%d8%a7%d9%84%d5%ad%d9%84%d9%8a%d8%a8-%d9%88%d9%85%d8%b4%d8%aa%d9%82%d8%a7%d8%aa-%d8%a7%d9%84%d4%a3%d9%84%d8%a8%d8%a7%d9%86/'">
+                                <img src="https://hfs.sa/wp-content/uploads/2025/10/dairy-products-wooden-table-min-1024x683.jpg" alt="الحليب ومشتقات الألبان">
+                                <div class="category-card-overlay">
+                                    <h3>الحليب ومشتقات الألبان</h3>
+                                    <span class="card-link">عرض التفاصيل <i class="fa-solid fa-arrow-left"></i></span>
+                                </div>
+                            </div>
+
+                            <!-- تصنيف 5: الدواجن -->
+                            <div class="category-card" onclick="window.location.href='https://hfs.sa/ar/product-category/%d8%a7%d9%84%d8%af%d9%88%d8%a7%dac%d9%86/'">
+                                <img src="https://hfs.sa/wp-content/uploads/2025/10/AdobeStock_129395285-min.jpeg" alt="الدواجن">
+                                <div class="category-card-overlay">
+                                    <h3>الدواجن</h3>
+                                    <span class="card-link">عرض التفاصيل <i class="fa-solid fa-arrow-left"></i></span>
+                                </div>
+                            </div>
+
+                            <!-- تصنيف 6: الأطعمة المجمدة -->
+                            <div class="category-card" onclick="window.location.href='https://hfs.sa/ar/product-category/%d8%a7%d9%84%d8%a3%d8%b7%d8%b9%d9%85%d8%a9-%d8%a7%d9%84%d9%85%dac%d9%85%d8%af%d8%a9/'">
+                                <img src="https://hfs.sa/wp-content/uploads/2025/10/composition-delicious-frozen-food-1-1024x683.jpg" alt="الأطعمة المجمدة">
+                                <div class="category-card-overlay">
+                                    <h3>الأطعمة المجمدة</h3>
+                                    <span class="card-link">عرض التفاصيل <i class="fa-solid fa-arrow-left"></i></span>
+                                </div>
+                            </div>
+
+                            <!-- تصنيف 7: الحبوب والبقوليات -->
+                            <div class="category-card" onclick="window.location.href='https://hfs.sa/ar/product-category/%d8%a7%d9%84%d8%ad%d8%a8%d9%88%d8%a8-%d9%88%d8%a7%d9%84%d8%a8%d9%82%d9%88%d9%84%d9%8a%d8%a7%d8%aa/'">
+                                <img src="https://hfs.sa/wp-content/uploads/2025/10/pexels-vanessa-loring-5966153-1-1024x683.jpg" alt="الحبوب والبقوليات">
+                                <div class="category-card-overlay">
+                                    <h3>الحبوب والبقوليات</h3>
+                                    <span class="card-link">عرض التفاصيل <i class="fa-solid fa-arrow-left"></i></span>
+                                </div>
+                            </div>
+
+                            <!-- تصنيف 8: الزيوت -->
+                            <div class="category-card" onclick="window.location.href='https://hfs.sa/ar/product-category/%d8%a7%d9%84%d8%b2%d9%8a%d9%88%d8%aa/'">
+                                <img src="https://hfs.sa/wp-content/uploads/2025/11/roberta-sorge-uOBApnN_K7w-unsplash-min.jpg" alt="الزيوت">
+                                <div class="category-card-overlay">
+                                    <h3>الزيوت</h3>
+                                    <span class="card-link">عرض التفاصيل <i class="fa-solid fa-arrow-left"></i></span>
+                                </div>
+                            </div>
+
+                            <!-- تصنيف 9: الصلصات والتوابل -->
+                            <div class="category-card" onclick="window.location.href='https://hfs.sa/ar/product-category/%d8%a7%d9%84%d8%b5%d9%84%d8%b5%d8%a7%d8%aa-%d9%88%d8%a7%d9%84%d8%aa%d9%88%d8%a7%d8%a8%d9%84/'">
+                                <img src="https://hfs.sa/wp-content/uploads/2025/11/anju-ravindranath-Nihdo084Yos-unsplash-min.jpg" alt="الصلصات والتوابل">
+                                <div class="category-card-overlay">
+                                    <h3>الصلصات والتوابل</h3>
+                                    <span class="card-link">عرض التفاصيل <i class="fa-solid fa-arrow-left"></i></span>
+                                </div>
+                            </div>
+
+                            <!-- تصنيف 10: المياه -->
+                            <div class="category-card" onclick="window.location.href='https://hfs.sa/ar/product-category/%d8%a7%d9%84%d9%85%d9%8a%d8%a7%d9%8al/'">
+                                <img src="https://hfs.sa/wp-content/uploads/2025/11/brendan-church-4bFKX8G419Q-unsplash-min.jpg" alt="المياه">
+                                <div class="category-card-overlay">
+                                    <h3>المياه</h3>
+                                    <span class="card-link">عرض التفاصيل <i class="fa-solid fa-arrow-left"></i></span>
+                                </div>
+                            </div>
+
+                            <!-- تصنيف 11: القهوة -->
+                            <div class="category-card" onclick="window.location.href='https://hfs.sa/ar/product-category/%d8%a7%d9%84%d9%82%d9%87%d9%88%d8%a9/'">
+                                <img src="https://hfs.sa/wp-content/uploads/2025/11/pexels-igor-haritanovich-814387-1695052-min-1024x683.jpg" alt="القهوة">
+                                <div class="category-card-overlay">
+                                    <h3>القهوة</h3>
+                                    <span class="card-link">عرض التفاصيل <i class="fa-solid fa-arrow-left"></i></span>
+                                </div>
+                            </div>
+
+                            <!-- تصنيف 12: الشوكولاتة -->
+                            <div class="category-card" onclick="window.location.href='https://hfs.sa/ar/product-category/%d8%a7%d9%84%d8%b4%d9%88%d9%83%d9%88%d9%84%d8%a7%d8%aa%d8%a9/'">
+                                <img src="https://hfs.sa/wp-content/uploads/2025/11/pexels-anete-lusina-4791265-min.jpg" alt="الشوكولاتة">
+                                <div class="category-card-overlay">
+                                    <h3>الشوكولاتة</h3>
+                                    <span class="card-link">عرض التفاصيل <i class="fa-solid fa-arrow-left"></i></span>
+                                </div>
+                            </div>
+
+                            <!-- تصنيف 13: العصائر -->
+                            <div class="category-card" onclick="window.location.href='https://hfs.sa/ar/product-category/%d8%a7%d9%84%d8%b9%d8%b5%d8%a7%d8%a6%d8%b1/'">
+                                <img src="https://hfs.sa/wp-content/uploads/2025/11/pexels-suju-1233319-min-1024x683.jpg" alt="العصائر">
+                                <div class="category-card-overlay">
+                                    <h3>العصائر</h3>
+                                    <span class="card-link">عرض التفاصيل <i class="fa-solid fa-arrow-left"></i></span>
+                                </div>
+                            </div>
                         </div>
-                        <h3>الحليب ومشتقات الألبان</h3>
-                        <a href="#quote-form" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;">عرض المنتجات</a>
                     </div>
-                    <!-- تصنيف 2 -->
-                    <div class="category-card">
-                        <div class="category-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1534482421-64566f976cfa?auto=format&fit=crop&q=80&w=250" alt="الأطعمة المعلبة">
-                        </div>
-                        <h3>الأطعمة المعلبة</h3>
-                        <a href="#quote-form" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;">عرض المنتجات</a>
-                    </div>
-                    <!-- تصنيف 3 -->
-                    <div class="category-card">
-                        <div class="category-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1603048588665-791ca8aea617?auto=format&fit=crop&q=80&w=250" alt="اللحوم">
-                        </div>
-                        <h3>اللحوم</h3>
-                        <a href="#quote-form" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;">عرض المنتجات</a>
-                    </div>
-                    <!-- تصنيف 4 -->
-                    <div class="category-card">
-                        <div class="category-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&q=80&w=250" alt="الأرز والمعكرونة">
-                        </div>
-                        <h3>الأرز والمعكرونة</h3>
-                        <a href="#quote-form" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;">عرض المنتجات</a>
-                    </div>
-                    <!-- تصنيف 5 -->
-                    <div class="category-card">
-                        <div class="category-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&q=80&w=250" alt="الزيوت">
-                        </div>
-                        <h3>الزيوت</h3>
-                        <a href="#quote-form" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;">عرض المنتجات</a>
-                    </div>
-                    <!-- تصنيف 6 -->
-                    <div class="category-card">
-                        <div class="category-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?auto=format&fit=crop&q=80&w=250" alt="الحبوب والبقوليات">
-                        </div>
-                        <h3>الحبوب والبقوليات</h3>
-                        <a href="#quote-form" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;">عرض المنتجات</a>
-                    </div>
-                    <!-- تصنيف 7 -->
-                    <div class="category-card">
-                        <div class="category-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&q=80&w=250" alt="الأطعمة المجمدة">
-                        </div>
-                        <h3>الأطعمة المجمدة</h3>
-                        <a href="#quote-form" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;">عرض المنتجات</a>
-                    </div>
-                    <!-- تصنيف 8 -->
-                    <div class="category-card">
-                        <div class="category-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&q=80&w=250" alt="الدواجن">
-                        </div>
-                        <h3>الدواجن</h3>
-                        <a href="#quote-form" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;">عرض المنتجات</a>
-                    </div>
+                    <button class="carousel-arrow next" id="productNextBtn"><i class="fa-solid fa-chevron-left"></i></button>
                 </div>
 
-                <!-- مغناطيس جذب العملاء (Lead Magnet Download Box) -->
+                <!-- نقاط التنقل لكاروسيل المنتجات -->
+                <div class="carousel-dots" id="productDots"></div>
+
+                <!-- الأزرار التفاعلية المزدوجة المحدثة بـ CTA قوي للتحويل -->
+                <div class="section-cta-container">
+                    <a href="#quote-form" class="btn btn-primary">اطلب تسعير هذه المنتجات فورا <i class="fa-solid fa-file-invoice-dollar"></i></a>
+                    <a href="https://hfs.sa/ar/shop/" class="btn btn-outline">تصفح جميع المنتجات المتاحة <i class="fa-solid fa-arrow-left"></i></a>
+                </div>
+
+                <!-- مغناطيس جذب العملاء لعام 2026 -->
                 <div class="lead-magnet-box">
                     <div class="lead-magnet-content">
                         <div class="lead-magnet-text">
-                            <h4>احصل على الكتالوج الشامل لعام 2025</h4>
-                            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">حمّل نسختك من دليل المنتجات بكافة التفاصيل والمواصفات الفنية والمقاييس مباشرة عبر بريدك الإلكتروني.</p>
+                            <h4>كتالوج المكونات والحلول الغذائية لعام 2026</h4>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">احصل على قائمة المواصفات والأسعار التقديرية المحدثة لكافة الأصناف بملف واحد مباشرة على بريدك الإلكتروني.</p>
                         </div>
                         <form class="lead-magnet-form" id="leadMagnetForm">
                             <input type="email" id="subscriberEmail" placeholder="أدخل بريدك الإلكتروني المخصص للعمل" required>
-                            <button type="submit" class="btn btn-primary" style="padding: 12px 20px;">تحميل الملف بصيغة PDF</button>
+                            <button type="submit" class="btn btn-primary">تحميل الكتالوج بصيغة PDF</button>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. قسم التميز والقيمة المضافة (Value Pillars) -->
+        <!-- 4. قسم التميز والقيمة المضافة لعام 2026 (Value Pillars Redesigned) -->
         <section class="pillars-section" id="why-us">
             <div class="container">
                 <div class="section-header">
-                    <h2>لماذا يفضل المئات من شركائنا التعامل معنا؟</h2>
-                    <p>نعمل بأساليب متطورة لضمان وصول المكونات بأعلى مستويات النضارة والأمان.</p>
+                    <h2>الأمان والاعتمادية في توريد الأغذية لقطاع الضيافة</h2>
+                    <p>نعمل وفق أسس علمية ولوجستية مبتكرة لنكون امتداداً حقيقياً وفعالاً لسلسلة التوريد الخاصة بمنشآتكم التجارية.</p>
                 </div>
                 
                 <div class="pillars-grid">
-                    <!-- ركيزة 1 -->
                     <div class="pillar-card">
-                        <div class="pillar-icon">
-                            <i class="fa-solid fa-truck-fast"></i>
-                        </div>
-                        <h3>تغطية شاملة</h3>
-                        <p>نصلك أينما كنت في المملكة بفضل أسطول نقل لوجستي حديث ومبرد مجهز لحماية سلامة المنتجات.</p>
+                        <div class="pillar-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                        <h3>سلاسل إمداد مبردة ذكية</h3>
+                        <p>نضمن وصول الشحنات الغذائية في درجات حرارة مثالية بفضل أسطول لوجستي مبرد ومرخص بالكامل يغطي كافة مناطق المملكة.</p>
                     </div>
-                    <!-- ركيزة 2 -->
                     <div class="pillar-card">
-                        <div class="pillar-icon">
-                            <i class="fa-solid fa-shield-halved"></i>
-                        </div>
-                        <h3>جودة مضمونة</h3>
-                        <p>تخضع جميع منتجاتنا لفحوصات دقيقة لضمان مطابقتها التامة لأعلى المعايير والمقاييس الدولية المعترف بها.</p>
+                        <div class="pillar-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3>مطابقة صارمة لسلامة الغذاء</h3>
+                        <p>نطبق معايير صارمة تضمن الامتثال التام للمواصفات القياسية السعودية والأنظمة الصادرة عن هيئة الغذاء والدواء (SFDA).</p>
                     </div>
-                    <!-- ركيزة 3 -->
                     <div class="pillar-card">
-                        <div class="pillar-icon">
-                            <i class="fa-solid fa-award"></i>
-                        </div>
-                        <h3>خبرة ممتدة</h3>
-                        <p>أكثر من 70 عاماً من العمل المتواصل والدراسة الوافية لاحتياجات قطاعات الأغذية والضيافة المحلية.</p>
+                        <div class="pillar-icon"><i class="fa-solid fa-award"></i></div>
+                        <h3>إرث ممتد منذ عام 1957</h3>
+                        <p>سبعة عقود من الفهم العميق لمتطلبات الفنادق الكبرى وشركات الإعاشة والمطاعم ذات المعايير العالية.</p>
                     </div>
-                    <!-- ركيزة 4 -->
                     <div class="pillar-card">
-                        <div class="pillar-icon">
-                            <i class="fa-solid fa-tags"></i>
-                        </div>
-                        <h3>أسعار تنافسية</h3>
-                        <p>حلول تسعيرية مرنة ومخصصة للكميات الكبيرة والتوريدات الدورية تضمن الكفاءة الاقتصادية لعملكم.</p>
+                        <div class="pillar-icon"><i class="fa-solid fa-tags"></i></div>
+                        <h3>كفاءة تكاليف المشتريات</h3>
+                        <p>نصمم خطط تسعيرية مرنة وعقود توريد سنوية مخصصة تدعم الكفاءة الاقتصادية والتشغيلية لمؤسستكم التجارية.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 5. قسم العلامات التجارية (Our Brands) -->
+        <!-- 5. قسم العلامات التجارية لعام 2026 (Brands Carousel Section) -->
         <section class="brands-section" id="brands">
             <div class="container">
                 <div class="section-header">
-                    <h2>العلامات التجارية المعتمدة</h2>
-                    <p>نحمل حقوق توزيع حصرية وموثوقة لعلامات تجارية رائدة عالمياً ومحلياً.</p>
+                    <h2>الشركاء التجاريين الحصريّين والعلامات العالمية المعتمدة</h2>
+                    <p>نمتلك حقوق توزيع حصرية وشراكات رسمية مستدامة مع أهم العلامات التجارية الرائدة عالمياً لضمان توريد منتجات معتمدة ومطابقة.</p>
                 </div>
 
-                <div class="brands-slider-container">
-                    <div class="brands-grid" id="brandsGrid">
-                        <!-- علامة 1 -->
-                        <div class="brand-card">
-                            <div class="brand-logo-wrapper">
-                                <i class="fa-solid fa-cow" style="font-size: 2.5rem; color: var(--primary-color);"></i>
+                <div class="carousel-outer-wrapper">
+                    <button class="carousel-arrow prev" id="brandPrevBtn"><i class="fa-solid fa-chevron-right"></i></button>
+                    <div class="carousel-track-wrapper">
+                        <div class="carousel-track" id="brandTrack">
+                            <!-- 1. بونتا -->
+                            <div class="brand-card">
+                                <div class="brand-logo-wrapper">
+                                    <img src="https://hfs.sa/wp-content/uploads/2025/10/Bonta-EnAr-logo-300x130.png" alt="">
+                                </div>
+                                <h4>بونتا</h4>
+                                <p>منتجات أرز وأجبان متميزة تلبي متطلبات الطهي العصري لقطاع الفنادق.</p>
+                                <a href="https://hfs.sa/ar/brand/%d8%a8%d9%88%d9%8check%d8%a7/" class="btn btn-outline" style="width:100%; text-align:center;">عرض التفاصيل</a>
                             </div>
-                            <h4>بونتا | BONTA</h4>
-                            <p>تشكيلة واسعة من منتجات الأرز والأجبان والمواد الجافة المحضرة بأحدث التقنيات.</p>
-                            <a href="#quote-form" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;">طلب تسعير العلامة</a>
-                        </div>
-                        <!-- علامة 2 -->
-                        <div class="brand-card">
-                            <div class="brand-logo-wrapper">
-                                <i class="fa-solid fa-wheat-awn" style="font-size: 2.5rem; color: var(--primary-color);"></i>
+
+                            <!-- 2. الجواد -->
+                            <div class="brand-card">
+                                <div class="brand-logo-wrapper">
+                                    <img src="https://hfs.sa/wp-content/uploads/2025/10/aljawad-rice-logo-300x300.png" alt="">
+                                </div>
+                                <h4>الجواد</h4>
+                                <p>أرز بسمتي عالي الجودة لتقديم نكهة أصيلة على مائدتكم التجارية.</p>
+                                <a href="https://hfs.sa/ar/brand/%d8%a7%d9%84%dac%d9%88%d8%a7%d8%af/" class="btn btn-outline" style="width:100%; text-align:center;">عرض التفاصيل</a>
                             </div>
-                            <h4>الجواد | Aljawad</h4>
-                            <p>حبوب وبقوليات فاخرة ممتازة التعبئة تلبي المعايير الصحية للطهي الاحترافي.</p>
-                            <a href="#quote-form" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;">طلب تسعير العلامة</a>
-                        </div>
-                        <!-- علامة 3 -->
-                        <div class="brand-card">
-                            <div class="brand-logo-wrapper">
-                                <i class="fa-solid fa-egg" style="font-size: 2.5rem; color: var(--primary-color);"></i>
+
+                            <!-- 3. أبو بنتين -->
+                            <div class="brand-card">
+                                <div class="brand-logo-wrapper">
+                                    <img src="https://hfs.sa/wp-content/uploads/2025/10/abu-binteen-logo-276x300.png" alt="">
+                                </div>
+                                <h4>أبو بنتين</h4>
+                                <p>العلامة التقليدية الموثوقة لتأمين السلع الأساسية والمواد التموينية.</p>
+                                <a href="https://hfs.sa/ar/brand/%d8%a3%d8%a8%d9%88-%d8%a8%d9%86%d8%aa%d9%8a%d9%86/" class="btn btn-outline" style="width:100%; text-align:center;">عرض التفاصيل</a>
                             </div>
-                            <h4>أبو بنتين | Two Girls</h4>
-                            <p>العلامة التجارية الكلاسيكية لخدمات المعجنات والمكونات التموينية بجودة موثوقة.</p>
-                            <a href="#quote-form" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.85rem;">طلب تسعير العلامة</a>
+
+                            <!-- 4. JBS Foods Group -->
+                            <div class="brand-card">
+                                <div class="brand-logo-wrapper">
+                                    <img src="https://hfs.sa/wp-content/uploads/2025/11/PHOTO-2025-11-05-21-21-30-1.jpg" alt="">
+                                </div>
+                                <h4>JBS Foods Group</h4>
+                                <p>الشركة العالمية الرائدة في إنتاج وتوريد اللحوم عالية الجودة والأمان.</p>
+                                <a href="https://hfs.sa/ar/brand/jbs-foods-group/" class="btn btn-outline" style="width:100%; text-align:center;">عرض التفاصيل</a>
+                            </div>
+
+                            <!-- 5. Yenkomo -->
+                            <div class="brand-card">
+                                <div class="brand-logo-wrapper">
+                                    <img src="https://hfs.sa/wp-content/uploads/2025/10/Yenkomo-Logo-300x196.webp" alt="">
+                                </div>
+                                <h4>Yenkomo</h4>
+                                <p>لحوم متميزة مستوردة من جنوب أفريقيا تمتاز بالجودة والمذاق الفريد.</p>
+                                <a href="https://hfs.sa/ar/brand/yenkomo/" class="btn btn-outline" style="width:100%; text-align:center;">عرض التفاصيل</a>
+                            </div>
+
+                            <!-- 6. Bella Carne -->
+                            <div class="brand-card">
+                                <div class="brand-logo-wrapper">
+                                    <img src="https://hfs.sa/wp-content/uploads/2025/11/PHOTO-2025-11-05-21-23-33-1-300x225.jpg" alt="">
+                                </div>
+                                <h4>Bella Carne</h4>
+                                <p>لحوم ممتازة منتجة وفق أعلى معايير السلامة والتغذية العالمية والمحلية.</p>
+                                <a href="https://hfs.sa/ar/brand/bella-carne/" class="btn btn-outline" style="width:100%; text-align:center;">عرض التفاصيل</a>
+                            </div>
+
+                            <!-- 7. Taji Wagyu -->
+                            <div class="brand-card">
+                                <div class="brand-logo-wrapper">
+                                    <img src="https://hfs.sa/wp-content/uploads/2025/11/taji-wagyu-logo-300x175.webp" alt="">
+                                </div>
+                                <h4>Taji Wagyu</h4>
+                                <p>لحوم الواغيو الفاخرة التي تتميز بالرخام الطري والنكهة الاستثنائية.</p>
+                                <a href="https://hfs.sa/ar/brand/taji-wagyu/" class="btn btn-outline" style="width:100%; text-align:center;">عرض التفاصيل</a>
+                            </div>
+
+                            <!-- 8. الطائي -->
+                            <div class="brand-card">
+                                <div class="brand-logo-wrapper">
+                                    <img src="https://hfs.sa/wp-content/uploads/2025/10/Al-Taie-Logo-fainal09-300x205.png" alt="">
+                                </div>
+                                <h4>الطائي</h4>
+                                <p>أطعمة معلبة ومنتجات تموينية تلبي متطلبات المطابخ المركزية والمطاعم.</p>
+                                <a href="https://hfs.sa/ar/brand/twst/" class="btn btn-outline" style="width:100%; text-align:center;">عرض التفاصيل</a>
+                            </div>
+
+                            <!-- 9. ريان -->
+                            <div class="brand-card">
+                                <div class="brand-logo-wrapper">
+                                    <img src="https://hfs.sa/wp-content/uploads/2025/10/%d8%b4%d8%b9%d8%a7%d8%b1-%d8%a7%d9%84%d8%b1%d9%8a%d8%a7%d9%86.jpg" alt="">
+                                </div>
+                                <h4>ريان</h4>
+                                <p>مياه نقية وعصائر ومنتجات غذائية متنوعة معبأة وفق شروط السلامة.</p>
+                                <a href="https://hfs.sa/ar/brand/%d8%b1%d9%8a%d8%a7%d9%86/" class="btn btn-outline" style="width:100%; text-align:center;">عرض التفاصيل</a>
+                            </div>
+
+                            <!-- 10. The Cheese Maker -->
+                            <div class="brand-card">
+                                <div class="brand-logo-wrapper">
+                                    <img src="https://hfs.sa/wp-content/uploads/2025/10/Cheese-Maker-Logo-1-300x300.png" alt="">
+                                </div>
+                                <h4>The Cheese Maker</h4>
+                                <p>تشكيلة من الأجبان الاحترافية المصنعة خصيصاً لتناسب احتياجات الشيفات.</p>
+                                <a href="https://hfs.sa/ar/brand/the-cheese-maker/" class="btn btn-outline" style="width:100%; text-align:center;">عرض التفاصيل</a>
+                            </div>
+
+                            <!-- 11. Qualiko -->
+                            <div class="brand-card">
+                                <div class="brand-logo-wrapper">
+                                    <img src="https://hfs.sa/wp-content/uploads/2025/10/qualiko-logo.png" alt="">
+                                </div>
+                                <h4>Qualiko</h4>
+                                <p>منتجات الدواجن المجمدة الفاخرة بأسعار تنافسية ومذاق يفضله الشركاء.</p>
+                                <a href="https://hfs.sa/ar/brand/qualiko/" class="btn btn-outline" style="width:100%; text-align:center;">عرض التفاصيل</a>
+                            </div>
+
+                            <!-- 12. Silva International -->
+                            <div class="brand-card">
+                                <div class="brand-logo-wrapper">
+                                    <img src="https://hfs.sa/wp-content/uploads/2025/11/PHOTO-2025-11-05-21-26-44-1.jpg" alt="">
+                                </div>
+                                <h4>Silva International</h4>
+                                <p>مكونات وتوابل مجففة ممتازة مستوردة ومصنفة لتلائم خطوط إنتاج الأغذية.</p>
+                                <a href="https://hfs.sa/ar/brand/silva-international/" class="btn btn-outline" style="width:100%; text-align:center;">عرض التفاصيل</a>
+                            </div>
+
+                            <!-- 13. Rama -->
+                            <div class="brand-card">
+                                <div class="brand-logo-wrapper">
+                                    <img src="https://hfs.sa/wp-content/uploads/2025/10/Rama_Logo_Org_Packaging_P281C_1c_V01-300x188.png" alt="">
+                                </div>
+                                <h4>Rama</h4>
+                                <p>حلول الدهون والزبدة النباتية المثالية لتحضير أرقى المخبوزات والحلويات.</p>
+                                <a href="https://hfs.sa/ar/brand/rama/" class="btn btn-outline" style="width:100%; text-align:center;">عرض التفاصيل</a>
+                            </div>
+
+                            <!-- 14. Farmer’s Choice -->
+                            <div class="brand-card">
+                                <div class="brand-logo-wrapper">
+                                    <img src="https://hfs.sa/wp-content/uploads/2025/10/farmers-choice-logo-300x180.webp" alt="">
+                                </div>
+                                <h4>Farmer’s Choice</h4>
+                                <p>مجموعة خضراوات ومواد غذائية أساسية منتقاة بعناية تامة من المزرعة.</p>
+                                <a href="https://hfs.sa/ar/brand/farmers-choice/" class="btn btn-outline" style="width:100%; text-align:center;">عرض التفاصيل</a>
+                            </div>
+
+                            <!-- 15. Olive Mister -->
+                            <div class="brand-card">
+                                <div class="brand-logo-wrapper">
+                                    <img src="https://hfs.sa/wp-content/uploads/2025/11/Olive-Mister-logo-300x264.jpg" alt="">
+                                </div>
+                                <h4>Olive Mister</h4>
+                                <p>زيت زيتون بكر ممتاز وزيتون مائدة فاخر من خيرات البحر الأبيض المتوسط.</p>
+                                <a href="https://hfs.sa/ar/brand/olive-mister/" class="btn btn-outline" style="width:100%; text-align:center;">عرض التفاصيل</a>
+                            </div>
+
+                            <!-- 16. Sannine Roastery -->
+                            <div class="brand-card">
+                                <div class="brand-logo-wrapper">
+                                    <img src="https://hfs.sa/wp-content/uploads/2025/10/Sannine-Logo-1-300x300.png" alt="">
+                                </div>
+                                <h4>Sannine Roastery</h4>
+                                <p>مكسرات وتوابل محمصة طازجة تضيف لمسة احترافية فريدة لأطباقكم.</p>
+                                <a href="https://hfs.sa/ar/brand/sannine-roastery/" class="btn btn-outline" style="width:100%; text-align:center;">عرض التفاصيل</a>
+                            </div>
+
+                            <!-- 17. Black by Friboi -->
+                            <div class="brand-card">
+                                <div class="brand-logo-wrapper">
+                                    <img src="https://hfs.sa/wp-content/uploads/2025/10/Black-by-Friboi-logo-1-300x136.png" alt="">
+                                </div>
+                                <h4>Black by Friboi</h4>
+                                <p>لحوم الأنغوس السوداء الفاخرة والمختارة بدقة لأرقى المطاعم والفنادق.</p>
+                                <a href="https://hfs.sa/ar/brand/friboi/" class="btn btn-outline" style="width:100%; text-align:center;">عرض التفاصيل</a>
+                            </div>
+
+                            <!-- 18. Fonterra -->
+                            <div class="brand-card">
+                                <div class="brand-logo-wrapper">
+                                    <div class="brand-logo-placeholder">F</div>
+                                </div>
+                                <h4>Fonterra</h4>
+                                <p>حلول ومنتجات الحليب والألبان الرائدة عالمياً لضمان الجودة الفنية.</p>
+                                <a href="https://hfs.sa/ar/brand/fonterra-2/" class="btn btn-outline" style="width:100%; text-align:center;">عرض التفاصيل</a>
+                            </div>
+
+                            <!-- 19. Frosted -->
+                            <div class="brand-card">
+                                <div class="brand-logo-wrapper">
+                                    <div class="brand-logo-placeholder">F</div>
+                                </div>
+                                <h4>Frosted</h4>
+                                <p>مقبلات وبطاطس جاهزة للتحضير السريع والتقديم في أوقات العمل المزدحمة.</p>
+                                <a href="https://hfs.sa/ar/brand/frosted-2/" class="btn btn-outline" style="width:100%; text-align:center;">عرض التفاصيل</a>
+                            </div>
+
+                            <!-- 20. Jumbuck -->
+                            <div class="brand-card">
+                                <div class="brand-logo-wrapper">
+                                    <img src="https://hfs.sa/wp-content/uploads/2025/11/jum_2-300x149.webp" alt="">
+                                </div>
+                                <h4>Jumbuck</h4>
+                                <p>لحوم الأغنام والضأن الأسترالية الممتازة والمطابقة لمعايير الجودة الحلال.</p>
+                                <a href="https://hfs.sa/ar/brand/jumbuck-2/" class="btn btn-outline" style="width:100%; text-align:center;">عرض التفاصيل</a>
+                            </div>
+
+                            <!-- 21. الباخرة -->
+                            <div class="brand-card">
+                                <div class="brand-logo-wrapper">
+                                    <img src="https://hfs.sa/wp-content/uploads/2025/10/Albakherah-rice-logo-300x300.png" alt="">
+                                </div>
+                                <h4>الباخرة</h4>
+                                <p>أرز بسمتي عالي النقاء يحافظ على شكل حباته الطويلة وقوامها الممتاز.</p>
+                                <a href="https://hfs.sa/ar/brand/%d8%a7%d9%84%d8%a8%d8%a7%d8%ae%d8%b1%d8%a9-2/" class="btn btn-outline" style="width:100%; text-align:center;">عرض التفاصيل</a>
+                            </div>
+
+                            <!-- 22. السفير -->
+                            <div class="brand-card">
+                                <div class="brand-logo-wrapper">
+                                    <img src="https://hfs.sa/wp-content/uploads/2025/10/Al-safeer-logo-300x300.png" alt="">
+                                </div>
+                                <h4>السفير</h4>
+                                <p>أرز ومواد أساسية عالية الاعتمادية ومفضلة لدى كبرى شركات المشتريات.</p>
+                                <a href="https://hfs.sa/ar/brand/%d8%a7%d9%84%d8%b3%d9%81%d9%8a%d8%b1-2/" class="btn btn-outline" style="width:100%; text-align:center;">عرض التفاصيل</a>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="brands-controls">
-                        <button class="control-btn" id="prevBrandBtn"><i class="fa-solid fa-arrow-right"></i></button>
-                        <button class="control-btn" id="nextBrandBtn"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button class="carousel-arrow next" id="brandNextBtn"><i class="fa-solid fa-chevron-left"></i></button>
+                </div>
+
+                <!-- نقاط التنقل لكاروسيل العلامات التجارية -->
+                <div class="carousel-dots" id="brandDots"></div>
+
+                <!-- الأزرار التفاعلية المزدوجة المحدثة بـ CTA قوي للعلامات -->
+                <div class="section-cta-container">
+                    <a href="#quote-form" class="btn btn-primary">اطلب تسعير خاص بهذه العلامات <i class="fa-solid fa-tags"></i></a>
+                    <a href="https://hfs.sa/ar/brands/" class="btn btn-outline">تصفح كافة العلامات التجارية مع التفاصيل <i class="fa-solid fa-arrow-left"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. قسم عملائنا الفاخر (Premium Enterprise Showcase - الموضع الجديد قبل الفورم لبناء الثقة) -->
+        <section class="clients-section" id="clients">
+            <div class="container">
+                <div class="section-header">
+                    <h2>شراكات مستدامة مع أقطاب الضيافة العالمية بالمملكة</h2>
+                    <p>فخورون بتقديم خدمات التوريد الغذائي والاعتماد اللوجستي المستمر لكبرى السلاسل الفندقية والمنتجعات الحائزة على تقييمات التميز.</p>
+                </div>
+
+                <div class="clients-grid">
+                    <!-- 1. فندق نوفا إم -->
+                    <div class="client-logo-card">
+                        <img src="https://hfs.sa/wp-content/uploads/2025/10/Nova-M-Hotel.png" alt="Nova M Hotel Logo">
+                    </div>
+                    <!-- 2. فندق روتانا -->
+                    <div class="client-logo-card">
+                        <img src="https://hfs.sa/wp-content/uploads/2025/10/Rotana-Hotel.png" alt="Rotana Hotel Logo">
+                    </div>
+                    <!-- 3. فندق رامادا -->
+                    <div class="client-logo-card">
+                        <img src="https://hfs.sa/wp-content/uploads/2025/10/Ramada-Logo.jpg" alt="Ramada Hotel Logo">
+                    </div>
+                    <!-- 4. فندق راديسون بلو -->
+                    <div class="client-logo-card">
+                        <img src="https://hfs.sa/wp-content/uploads/2025/10/Radison-Blue-Logo.png" alt="Radisson Blu Logo">
+                    </div>
+                    <!-- 5. فندق الفيصلية -->
+                    <div class="client-logo-card">
+                        <img src="https://hfs.sa/wp-content/uploads/2025/10/Al-Faisaliah-Logo.png" alt="Al Faisaliah Logo">
+                    </div>
+                    <!-- 6. فندق سينترو -->
+                    <div class="client-logo-card">
+                        <img src="https://hfs.sa/wp-content/uploads/2025/10/Centro-Hotel.png" alt="Centro Hotel Logo">
+                    </div>
+                    <!-- 7. فندق كورت يارد ماريوت -->
+                    <div class="client-logo-card">
+                        <img src="https://hfs.sa/wp-content/uploads/2025/10/Courtyard-hotel-logo-scaled.png" alt="Courtyard Hotel Logo">
+                    </div>
+                    <!-- 8. فندق كراون بلازا -->
+                    <div class="client-logo-card">
+                        <img src="https://hfs.sa/wp-content/uploads/2025/10/Crowne_Plaza_logo.svg_.png" alt="Crowne Plaza Logo">
+                    </div>
+                    <!-- 9. فندق دبل تري -->
+                    <div class="client-logo-card">
+                        <img src="https://hfs.sa/wp-content/uploads/2025/10/DoubleTree-Logo-Color_HR-1.webp" alt="DoubleTree Logo">
+                    </div>
+                    <!-- 10. فندق فيرمونت -->
+                    <div class="client-logo-card">
+                        <img src="https://hfs.sa/wp-content/uploads/2025/10/fairmont-hotel-logo.png" alt="Fairmont Hotel Logo">
+                    </div>
+                    <!-- 11. فندق حياة ريجنسي -->
+                    <div class="client-logo-card">
+                        <img src="https://hfs.sa/wp-content/uploads/2025/10/Hayatt-Regency-Logo.png" alt="Hyatt Regency Logo">
+                    </div>
+                    <!-- 12. فندق هيلتون جاردن إن -->
+                    <div class="client-logo-card">
+                        <img src="https://hfs.sa/wp-content/uploads/2025/10/Hilton-Garden-Inn-Hotel.png" alt="Hilton Garden Inn Logo">
+                    </div>
+                    <!-- 13. فندق هيلتون الرياض -->
+                    <div class="client-logo-card">
+                        <img src="https://hfs.sa/wp-content/uploads/2025/10/Hilton-Riyadh-Hotel-Logo.png" alt="Hilton Riyadh Logo">
+                    </div>
+                    <!-- 14. فندق لو ميريديان -->
+                    <div class="client-logo-card">
+                        <img src="https://hfs.sa/wp-content/uploads/2025/10/Le-Meridien.png" alt="Le Meridien Logo">
+                    </div>
+                    <!-- 15. فندق نارسيس -->
+                    <div class="client-logo-card">
+                        <img src="https://hfs.sa/wp-content/uploads/2025/10/logo-narcissus-png.webp" alt="Narcissus Hotel Logo">
+                    </div>
+                    <!-- 16. فندق ماريوت المطار -->
+                    <div class="client-logo-card">
+                        <img src="https://hfs.sa/wp-content/uploads/2025/10/Marriott-Hotel-airport-logo-e1726064583726.png" alt="Marriott Hotel Airport Logo">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 6. قسم الأرقام والإنجازات (Trust Numbers) -->
-        <section class="stats-section">
+        <!-- 7. قسم التبويب المنقسم الفاخر لعام 2026 (Split-Screen Stats + Form Section) -->
+        <section class="split-lead-section" id="quote-form">
             <div class="container">
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <h3>+50</h3>
-                        <p>منتج غذائي متنوع</p>
+                <div class="split-container">
+                    <!-- الجانب الداكن: المسيرة بالأرقام والمعلومات اللوجستية -->
+                    <div class="split-left-info">
+                        <div class="split-left-content">
+                            <h3>البنية التحتية والمسيرة اللوجستية</h3>
+                            <p>أكثر من سبعة عقود من الريادة اللوجستية في تموين وتسهيل أعمال المشتريات الغذائية لقطاع الضيافة بالمملكة، عبر أساطيل مبردة وحلول ذكية تدعم استمرارية وتطور مشاريعكم.</p>
+                            
+                            <div class="stats-vertical-grid">
+                                <div class="stat-card-item">
+                                    <h4>+50</h4>
+                                    <p>منتج غذائي معتمد</p>
+                                </div>
+                                <div class="stat-card-item">
+                                    <h4>+50</h4>
+                                    <p>براند عالمي حصري</p>
+                                </div>
+                                <div class="stat-card-item">
+                                    <h4>+50</h4>
+                                    <p>شريك أعمال استراتيجي</p>
+                                </div>
+                                <div class="stat-card-item">
+                                    <h4>+70</h4>
+                                    <p>سنة من ريادة التوريد والخدمة</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <h3>+50</h3>
-                        <p>علامة تجارية دولية</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>+50</h3>
-                        <p>شريك نجاح تجاري</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>+70</h3>
-                        <p>سنة من الجودة والتميز</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- 7. نموذج طلب السعر المباشر (Lead Capture Form) -->
-        <section class="quote-section" id="quote-form">
-            <div class="container">
-                <div class="quote-container">
-                    <div class="quote-form-wrapper">
-                        <div class="quote-form-header">
-                            <h3>اطلب عرض سعر مخصص الآن</h3>
-                            <p style="color: var(--text-muted);">أخبرنا باحتياجات قطاع عملك وسيقوم فريق المبيعات واللوجستيات بإعداد عرض تسعير احترافي ومناسب خلال 24 ساعة عمل.</p>
+                    <!-- الجانب الأبيض: نموذج طلب السعر المباشر والمنظم -->
+                    <div class="split-right-form">
+                        <div class="quote-form-header" style="text-align: right; margin-bottom: 30px;">
+                            <h3 style="font-size: 1.6rem; font-weight: 800; color: var(--text-dark);">تأمين توريد دوري / طلب تسعير</h3>
+                            <p style="color: var(--text-muted); font-size: 0.95rem;">أرسل متطلبات منشأتك اللوجستية وسيقوم فريق المبيعات واللوجستيات بدراسة وتأمين الطلبات مع تقديم عرض تسعير رسمي خلال 24 ساعة.</p>
                         </div>
                         <form id="directQuoteForm">
                             <div class="quote-form-grid">
                                 <div class="form-group">
-                                    <label for="clientName">الاسم / اسم الشركة *</label>
+                                    <label for="clientName">الاسم / اسم المنشأة أو الشركة *</label>
                                     <input type="text" id="clientName" placeholder="مثال: شركة فنادق النخبة" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="contactInfo">رقم الجوال أو البريد الإلكتروني *</label>
-                                    <input type="text" id="contactInfo" placeholder="مثال: info@hotel.com أو 05xxxxxxxx" required>
+                                    <input type="text" id="contactInfo" placeholder="مثال: sales@hotel.com أو 05xxxxxxxx" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="orderType">نوع القطاع / الطلب *</label>
+                                    <label for="orderType">تصنيف نشاط المنشأة *</label>
                                     <select id="orderType" required>
                                         <option value="" disabled selected>اختر القطاع الخاص بك...</option>
                                         <option value="hotels">فنادق وضيافة</option>
@@ -1034,7 +1619,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="estimatedVolume">الحجم التقديري للطلب دورياً</label>
+                                    <label for="estimatedVolume">الحجم التقديري للتوريد شهرياً</label>
                                     <select id="estimatedVolume">
                                         <option value="light">أقل من 10 طن شهرياً</option>
                                         <option value="medium">من 10 إلى 50 طن شهرياً</option>
@@ -1042,11 +1627,11 @@
                                     </select>
                                 </div>
                                 <div class="form-group full-width">
-                                    <label for="message">تفاصيل أو منتجات محددة ترغب في الاستفسار عنها</label>
-                                    <textarea id="message" rows="4" placeholder="اكتب تفاصيل المنتجات، الكميات، أو أي ملاحظات أخرى هنا..."></textarea>
+                                    <label for="message">السلع أو المكونات المطلوبة للتسعير</label>
+                                    <textarea id="message" rows="4" placeholder="اكتب تفاصيل السلع والكميات المطلوبة بشكل مبدئي هنا..."></textarea>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">أرسل طلب التسعير الآن</button>
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 15px;">إرسال طلب التوريد والتسعير</button>
                         </form>
                     </div>
                 </div>
@@ -1054,12 +1639,12 @@
         </section>
     </main>
 
-    <!-- 8. التذييل (Footer) -->
+    <!-- 9. التذييل لعام 2026 (Footer) -->
     <footer>
         <div class="container footer-grid">
             <div class="footer-col footer-about">
-                <h4 style="color: var(--primary-color); font-weight:800; font-size:1.6rem; padding-bottom: 0;">HFS</h4>
-                <p style="margin-top: 15px;">شركة رائدة في استيراد وتوزيع وتوريد الأغذية لقطاع الفنادق والإعاشة في المملكة العربية السعودية. نوفر لشركائنا خدمات آمنة وتوريداً دورياً مستقراً.</p>
+                <img src="https://hfs.sa/wp-content/uploads/2025/10/hfs-logo-main.png" alt="HFS Logo">
+                <p>شراكة توريد مستدامة واعتماد لوجستي رائد لقطاع الضيافة والإعاشة في المملكة العربية السعودية، نسخر كفاءتنا وشراكاتنا الدولية منذ عام 1957 لخدمة وتطوير أعمالكم التجارية.</p>
                 <div class="social-icons">
                     <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
                     <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
@@ -1075,6 +1660,7 @@
                     <li><a href="#products">كتالوج المنتجات</a></li>
                     <li><a href="#why-us">ميزات التوريد</a></li>
                     <li><a href="#brands">العلامات التجارية</a></li>
+                    <li><a href="#clients">عملائنا</a></li>
                     <li><a href="#quote-form">طلب الأسعار</a></li>
                 </ul>
             </div>
@@ -1089,21 +1675,20 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>جميع الحقوق محفوظة &copy; 2025 شركة الحسام للخدمات الغذائية واللوجستية.</p>
+            <p>جميع الحقوق محفوظة &copy; 2026 شركة الحسام للخدمات الغذائية واللوجستية.</p>
         </div>
     </footer>
 
-    <!-- توست الإشعار للتفاعل التلقائي لزيادة ثقة المستخدم -->
+    <!-- توست الإشعار التفاعلي -->
     <div class="toast" id="successToast">
         <i class="fa-solid fa-circle-check" style="font-size: 1.3rem;"></i>
         <span id="toastText">تم إرسال طلبك بنجاح! سيتواصل معك أحد مستشارينا قريباً.</span>
     </div>
 
-    <!-- 9. جافا سكريبت التفاعلية لتحسين التجربة ومتابعة تحويل العملاء -->
+    <!-- 10. جافا سكريبت التفاعلية (JS Logic) -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             
-            // تهيئة وإظهار توست نجاح العمليات
             const toast = document.getElementById('successToast');
             const toastText = document.getElementById('toastText');
 
@@ -1115,65 +1700,168 @@
                 }, 4000);
             }
 
-            // أ. معالجة نموذج طلب السعر المباشر (CRO Target 1)
+            // أ. معالجة نموذج طلب السعر المباشر
             const quoteForm = document.getElementById('directQuoteForm');
-            quoteForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // جمع البيانات وإرسالها للمطور لدمجها بـ Admin WordPress أو إرسالها لبريد الشركة
-                const formData = {
-                    name: document.getElementById('clientName').value,
-                    contact: document.getElementById('contactInfo').value,
-                    orderType: document.getElementById('orderType').value,
-                    volume: document.getElementById('estimatedVolume').value,
-                    message: document.getElementById('message').value
-                };
+            if (quoteForm) {
+                quoteForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    showToast('شكراً لتواصلك! تم تسجيل طلب عرض السعر الخاص بك، وسنتواصل معك خلال أقل من 24 ساعة عمل.');
+                    quoteForm.reset();
+                });
+            }
 
-                // محاكاة الإرسال الناجح للطلب لتوفير تجربة مستخدم تفاعلية ممتازة
-                console.log('بيانات الطلب المرسلة:', formData);
-                showToast('شكراً لتواصلك! تم تسجيل طلب عرض السعر الخاص بك، وسنتواصل معك خلال أقل من 24 ساعة.');
-                quoteForm.reset();
-            });
-
-            // ب. معالجة مغناطيس الرغبة بتحميل كتالوج الـ PDF (CRO Target 2)
+            // ب. معالجة نموذج تحميل كتالوج الـ PDF لعام 2026
             const leadMagnetForm = document.getElementById('leadMagnetForm');
-            leadMagnetForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const email = document.getElementById('subscriberEmail').value;
+            if (leadMagnetForm) {
+                leadMagnetForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    showToast('تم إرسال رابط تحميل كتالوج 2026 الشامل مباشرة إلى بريدك الإلكتروني.');
+                    leadMagnetForm.reset();
+                });
+            }
+
+            // دالة مشتركة لتشغيل الكاروسيل وبناء نقاط الملاحة التفاعلية (مع دعم كامل للمس السحب بالجوال)
+            function setupCarousel(trackId, prevBtnId, nextBtnId, dotsContainerId) {
+                const track = document.getElementById(trackId);
+                const prevBtn = document.getElementById(prevBtnId);
+                const nextBtn = document.getElementById(nextBtnId);
+                const dotsContainer = document.getElementById(dotsContainerId);
                 
-                console.log('طلب تحميل الكتالوج للبريد الإلكتروني:', email);
-                showToast('تم إرسال رابط تحميل كتالوج 2025 الشامل مباشرة إلى بريدك الإلكتروني.');
-                leadMagnetForm.reset();
-            });
+                if (!track || !prevBtn || !nextBtn) return;
 
-            // ج. آلية محاكاة السلايدر للعلامات التجارية لتقليل مساحة تصفح الصفحة
-            const prevBtn = document.getElementById('prevBrandBtn');
-            const nextBtn = document.getElementById('nextBrandBtn');
-            const brandsGrid = document.getElementById('brandsGrid');
-            
-            // بيانات محاكاة لإضافة كروت أخرى تلقائياً بالتمرير
-            let brandIndex = 0;
-            const totalBrands = 3; // عدد الحركات الافتراضية
+                let currentIndex = 0;
+                const totalSlides = track.children.length;
 
-            nextBtn.addEventListener('click', function() {
-                if (brandIndex < totalBrands - 1) {
-                    brandIndex++;
-                    brandsGrid.style.transform = `translateX(${brandIndex * 33.33}%)`;
-                } else {
-                    brandIndex = 0;
-                    brandsGrid.style.transform = `translateX(0)`;
+                // متغيرات لتسجيل حركات اللمس (Touch Events)
+                let startX = 0;
+                let currentX = 0;
+                let isDragging = false;
+
+                function getSlideWidth() {
+                    const firstSlide = track.firstElementChild;
+                    if (!firstSlide) return 0;
+                    return firstSlide.offsetWidth + 20; // عرض الكرت + الفجوة (gap)
                 }
-            });
 
-            prevBtn.addEventListener('click', function() {
-                if (brandIndex > 0) {
-                    brandIndex--;
-                    brandsGrid.style.transform = `translateX(${brandIndex * 33.33}%)`;
-                } else {
-                    brandIndex = totalBrands - 1;
-                    brandsGrid.style.transform = `translateX(${brandIndex * 33.33}%)`;
+                function getVisibleSlidesCount() {
+                    const width = window.innerWidth;
+                    if (width > 1024) return 4;
+                    if (width > 768) return 3;
+                    if (width > 480) return 2;
+                    return 1;
                 }
-            });
+
+                function getMaxIndex() {
+                    return Math.max(0, totalSlides - getVisibleSlidesCount());
+                }
+
+                // بناء النقاط السفلية ديناميكياً بناءً على عدد الحركات المتاحة
+                function buildDots() {
+                    if (!dotsContainer) return;
+                    dotsContainer.innerHTML = '';
+                    const maxIndex = getMaxIndex();
+                    
+                    for (let i = 0; i <= maxIndex; i++) {
+                        const dot = document.createElement('div');
+                        dot.classList.add('carousel-dot');
+                        if (i === currentIndex) dot.classList.add('active');
+                        
+                        dot.addEventListener('click', () => {
+                            currentIndex = i;
+                            updateCarouselPosition();
+                        });
+                        dotsContainer.appendChild(dot);
+                    }
+                }
+
+                function updateCarouselPosition() {
+                    const slideWidth = getSlideWidth();
+                    track.style.transform = `translateX(${currentIndex * slideWidth}px)`;
+                    
+                    // تحديث حالة النقطة النشطة
+                    if (dotsContainer) {
+                        const dots = dotsContainer.children;
+                        for (let i = 0; i < dots.length; i++) {
+                            if (i === currentIndex) {
+                                dots[i].classList.add('active');
+                            } else {
+                                dots[i].classList.remove('active');
+                            }
+                        }
+                    }
+                }
+
+                nextBtn.addEventListener('click', () => {
+                    const maxIndex = getMaxIndex();
+                    if (currentIndex < maxIndex) {
+                        currentIndex++;
+                    } else {
+                        currentIndex = 0; // تدوير تلقائي للبداية
+                    }
+                    updateCarouselPosition();
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    const maxIndex = getMaxIndex();
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                    } else {
+                        currentIndex = maxIndex; // تدوير تلقائي للنهاية
+                    }
+                    updateCarouselPosition();
+                });
+
+                // دمج أحداث اللمس والسحب لدعم تصفح الجوال بسلاسة تامة (Mobile Touch Swipe)
+                track.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                    isDragging = true;
+                    track.style.transition = 'none'; // إلغاء الأنيميشن مؤقتاً أثناء السحب المباشر
+                }, { passive: true });
+
+                track.addEventListener('touchmove', (e) => {
+                    if (!isDragging) return;
+                    currentX = e.touches[0].clientX;
+                    const diffX = currentX - startX;
+                    const slideWidth = getSlideWidth();
+                    const currentTransform = currentIndex * slideWidth;
+                    
+                    // تحريك المسار يدوياً مع إصبع المستخدم
+                    track.style.transform = `translateX(${currentTransform + diffX}px)`;
+                }, { passive: true });
+
+                track.addEventListener('touchend', (e) => {
+                    if (!isDragging) return;
+                    isDragging = false;
+                    track.style.transition = 'transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)';
+                    const diffX = currentX - startX;
+                    const maxIndex = getMaxIndex();
+
+                    // إذا كان السحب كافياً (أكثر من 50 بكسل) قم بتغيير الكرت النشط
+                    if (Math.abs(diffX) > 50) {
+                        if (diffX > 0 && currentIndex > 0) {
+                            currentIndex--; // سحب لليمين يعيد للخلف
+                        } else if (diffX < 0 && currentIndex < maxIndex) {
+                            currentIndex++; // سحب لليسار يتقدم للأمام
+                        }
+                    }
+                    updateCarouselPosition();
+                });
+
+                // تهيئة مبدئية عند التحميل
+                buildDots();
+                
+                // إعادة التهيئة التلقائية عند تغيير مقاس الشاشة
+                window.addEventListener('resize', () => {
+                    currentIndex = 0;
+                    track.style.transform = `translateX(0px)`;
+                    buildDots();
+                });
+            }
+
+            // تشغيل الكاروسيل للمنتجات مع بناء نقاط التنقل ودعم اللمس
+            setupCarousel('productTrack', 'productPrevBtn', 'productNextBtn', 'productDots');
+            // تشغيل الكاروسيل للعلامات التجارية مع بناء نقاط التنقل ودعم اللمس
+            setupCarousel('brandTrack', 'brandPrevBtn', 'brandNextBtn', 'brandDots');
         });
     </script>
 </body>
